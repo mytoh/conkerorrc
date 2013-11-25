@@ -17,4 +17,5 @@ my_add_module_path();
 require("my-settings");
 require("my-modeline");
 require("my-webjumps");
+require("my-page-modes");
 require("my-keys");
