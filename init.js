@@ -19,3 +19,5 @@ require("my-modeline");
 require("my-webjumps");
 require("my-page-modes");
 require("my-keys");
+require("my-proxy");
+require("my-css");
