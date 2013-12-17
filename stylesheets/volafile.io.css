@@ -1,0 +1,28 @@
+@-moz-document domain("volafile.io") {
+
+body
+{
+background-color: #323232 !important;
+}
+
+    #chat_frame,
+    #files_frame,
+    #room_name_container,
+    #header_row_container
+    {
+        background-color: #323232 !important;
+    }
+
+    html.room #file_list .file:nth-child(odd)
+    {
+        background-color: #323232 !important;
+    }
+
+    html.room #file_list .file:nth-child(even)
+    {
+        background-color: #444444 !important;
+    }
+
+
+}
+

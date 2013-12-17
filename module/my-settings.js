@@ -5,9 +5,11 @@ require("new-tabs");
 require("favicon");
 require("clicks-in-new-buffer");
 
+// extensions
+require("adblockplus");
 
 
-theme_load("default");
+theme_load("gesso");
 
 // default directory for downloads and shell commands.
 cwd = get_home_directory();
@@ -19,8 +21,8 @@ cwd.append("lataukset");
 // of new windows.
 url_remoting_fn = load_url_in_new_buffer;
 
-// new-tab
-// tab_bar_show_icon = true;
+// new-tabs
+tab_bar_show_icon = true;
 
 // load download buffers in the background in the current
 // window, instead of in new windows.
