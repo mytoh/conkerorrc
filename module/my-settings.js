@@ -13,7 +13,7 @@ theme_load("gesso");
 
 // default directory for downloads and shell commands.
 cwd = get_home_directory();
-cwd.append("local");
+cwd.append("huone");
 cwd.append("lataukset");
 
 
