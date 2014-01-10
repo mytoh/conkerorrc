@@ -9,7 +9,7 @@ require("clicks-in-new-buffer");
 require("adblockplus");
 
 
-theme_load("gesso");
+theme_load("default");
 
 // default directory for downloads and shell commands.
 cwd = get_home_directory();
@@ -41,6 +41,8 @@ read_buffer_show_icons = true;
 hint_digits="aoeuidhtnspyfgcrl";
 
 
+// recenter search
+isearch_scroll_center_vertically = true;
 
 
 // To invoke an alert, enter at a M-: prompt:
