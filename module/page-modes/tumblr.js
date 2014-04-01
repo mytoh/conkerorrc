@@ -1,4 +1,6 @@
 
+dumpln("tumblr");
+
 require("content-buffer");
 
 define_keymap("tumblr_keymap", $display_name = "tumblr");

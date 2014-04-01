@@ -1,0 +1,19 @@
+/* https://github.com/scottjad/dotfiles/blob/master/.conkerorrc/color-theme.js */
+
+@-moz-document domain("github.com") {
+
+    .k { font-weight: bold !important }  /* keyword */
+    a, h1, code, pre {text-shadow: 0px 0px 0px black !important; }  /* ugly shadows */
+    /* named builtin? .nb named function .nf */
+    /* commented cause gh's clojure highlighting marks lots of the code with this */
+    /* '.nv { color: #ff5996 !important } ', // function name/variable name */
+    .nv { color: #aaa !important }   /* function name/variable name */
+    .s { color: #95e454 !important }   /* string */
+    .c1 { color: #99968b !important; 
+          font-style: normal !important;
+        }  /* comment */
+    .x { background-color: #666666 !important }  /* added/deleted portion */
+    .gi, .gi .x { color: #1AFF84 !important }  /* inserted line */
+    .gd, .gd .x { color: #ff0080 !important }  /* deleted line */
+
+}

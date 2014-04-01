@@ -12,5 +12,6 @@ function resister_stylesheet (name) {
 }
 
 resister_stylesheet("volafile.io");
+// resister_stylesheet("github.com");
 
 provide("my-css");
