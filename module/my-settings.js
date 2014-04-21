@@ -71,10 +71,5 @@ function my_title_format (window) {
 title_format_fn = my_title_format;
 
 
-/// User prefs
-user_pref("browser.download.manager.closeWhenDone", true);
-user_pref("extensions.checkCompatibility", false);
-user_pref("browser.tabs.animate", false);
-user_pref("browser.download.animateNotifications", false);
 
 provide("my-settings");
