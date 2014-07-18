@@ -22,6 +22,14 @@ user_pref("layout.scrollbar.side",3);
 // user_pref('network.proxy.ssl_port', 3128);
 // user_pref('network.proxy.type', 1);
 
+/// relayd
+// user_pref('network.proxy.http',  "127.0.0.1");
+// user_pref('network.proxy.http_port', 8080);
+// user_pref('network.proxy.ssl',    "127.0.0.1");
+// user_pref('network.proxy.ssl_port', 8080);
+// user_pref('network.proxy.type', 1);
+
+
 // oopp
 user_pref("dom.ipc.plugins.enabled", false);
 user_pref("dom.ipc.plugins.enabled.libflashplayer.so", false);
