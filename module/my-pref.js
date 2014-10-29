@@ -16,11 +16,18 @@ user_pref("browser.enable_automatic_image_resizing", true);
 user_pref("layout.scrollbar.side",3);
 
 /// squid
-// user_pref('network.proxy.http',  "192.168.1.22");
+// user_pref('network.proxy.http',  "localhost");
 // user_pref('network.proxy.http_port', 3128);
-// user_pref('network.proxy.ssl',    "192.168.1.22");
+// user_pref('network.proxy.ssl',    "localhost");
 // user_pref('network.proxy.ssl_port', 3128);
 // user_pref('network.proxy.type', 1);
+
+/// delegate
+user_pref('network.proxy.http',  "proxy.koti");
+user_pref('network.proxy.http_port', 8080);
+user_pref('network.proxy.ssl',    "proxy.koti");
+user_pref('network.proxy.ssl_port', 8080);
+user_pref('network.proxy.type', 1);
 
 /// relayd
 // user_pref('network.proxy.http',  "127.0.0.1");
@@ -34,7 +41,5 @@ user_pref("layout.scrollbar.side",3);
 user_pref("dom.ipc.plugins.enabled", false);
 user_pref("dom.ipc.plugins.enabled.libflashplayer.so", false);
 
-// unset proxy
-user_pref('network.proxy.type', 0);
 
 provide("my-pref");

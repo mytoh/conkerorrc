@@ -1,0 +1,16 @@
+/* github.com/scottjad/dotfiles/.conkerorrc */
+
+@-moz-document domain("wikipedia.org") {
+    div#content {
+        margin-left: 0em !important;
+    }
+    #mw-panel,
+    #siteNotice,
+    #mw-head,
+    #mw-page-base,
+    #mw-head-base,
+    #footer,
+    #mw-articlefeedback {
+        display: none !important;
+    }
+}

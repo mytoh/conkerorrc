@@ -1,15 +1,24 @@
 
 dumpln("my-settings");
 
+// extensions
 require("new-tabs");
 require("favicon");
 require("clicks-in-new-buffer");
-
-// extensions
 require("adblockplus");
 
-
 theme_load("default");
+
+
+//// homepage
+let (home = get_home_directory()) {
+    home.append(".org");
+    home.append("etusivu");
+    home.append("etusivu.html");
+    homepage = home.path;
+   dumpln(homepage);
+}
+
 
 // default directory for downloads and shell commands.
 cwd = get_home_directory();
@@ -87,6 +96,9 @@ function my_title_format (window) {
 
 title_format_fn = my_title_format;
 
-
+// key-kill
+require("key-kill");
+//key_kill_mode.test.push(build_url_regexp($domain = "github"));
+key_kill_mode.test.push(/\/\/.*slashdot\.org\//);
 
 provide("my-settings");

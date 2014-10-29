@@ -1,4 +1,3 @@
-// -*- mode: js3 -*-
 
 dumpln("init.js");
 
@@ -22,3 +21,6 @@ require("my-keys");
 require("my-proxy");
 require("my-css");
 require("my-pref");
+require("my-org");
+require("my-selection-search");
+require("color-theme");

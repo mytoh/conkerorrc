@@ -29,6 +29,6 @@ my_add_page_modes_path();
 
 require("tumblr");
 
-page_mode_deactivate(github_mode);
+//page_mode_deactivate(github_mode);
 
 provide("my-page-modes");

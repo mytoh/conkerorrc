@@ -2,7 +2,7 @@
 proxy_server_default = "localhost";
 proxy_port_default = 8080;
 
-function set_proxy_session (window, server, port) {
+function proxy_session_enable (window, server, port) {
     if (server == "N") {
        session_pref('network.proxy.type', 0); //direct connection
        window.minibuffer.message("Direction connection to the internet enabled for this session");
@@ -29,7 +29,7 @@ function set_proxy_session (window, server, port) {
     }
 }
 
-function unset_proxy_session (window) {
+function proxy_session_disable (window) {
        session_pref('network.proxy.type', 0); //direct connection
 
       session_pref('network.proxy.share_proxy_settings', false);
