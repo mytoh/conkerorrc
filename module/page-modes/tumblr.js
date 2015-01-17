@@ -18,6 +18,7 @@ define_key(tumblr_keymap, "M-c", null, $fallthrough);
 define_key(tumblr_keymap, "M-tab", null, $fallthrough);
 define_key(tumblr_keymap, "?", null, $fallthrough);
 define_key(tumblr_keymap, "space", null, $fallthrough);
+define_key(tumblr_keymap, "u", escape );
 
 
 define_keymaps_page_mode("tumblr-mode",

@@ -3,7 +3,7 @@ dumpln("my-page-modes");
 
 /// modules
 require("gmail");
-require("github");
+//require("github");
 require("twitter");
 require("duckduckgo");
 require("facebook");
