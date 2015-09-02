@@ -1,6 +1,6 @@
 //set the proxy server for this session only
 proxy_server_default = "localhost";
-proxy_port_default = 8080;
+proxy_port_default = 3128;
 
 function proxy_session_enable (window, server, port) {
     if (server == "N") {

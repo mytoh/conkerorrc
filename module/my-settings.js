@@ -104,4 +104,7 @@ key_kill_mode.test.push(/\/\/.*slashdot\.org\//);
 // block focus change
 require("block-content-focus-change");
 
+// useragent
+set_user_agent("Mozilla/5.0 (Windows NT 6.3; rv:38.0) Gecko/20100101 Firefox/38.0");
+
 provide("my-settings");

@@ -58,10 +58,10 @@ global_color_theme(
     [make_css_data_uri(
         ['*:not(img) {'+
          // 'h1, h2, p, a, div, span, table, td, th tr, ul, li, strong, input, select, textarea, body {'+
-         'font-style: normal !important;'+ // italics is hard to read with gohu
+         // 'font-style: normal !important;'+ // italics is hard to read with gohu
          // 'background: #303030 !important;'+
 
-         'background: #404040 !important;'+
+         'background: #222730 !important;'+
          'color: #cccccc !important; '+
          'text-shadow: 0px 0px 0px  black !important;'+ // fix ugly shadows
 
@@ -79,10 +79,10 @@ global_color_theme(
          // 'font-family: Terminus !important; '+
          // 'font-family: EnvyPn !important; '+
          // 'font-family: Ubuntu Mono !important; '+
-         'font-family: Ubuntu !important; '+
+         // 'font-family: Ubuntu !important; '+
          // 'font-weight: lighter !important; '+
          // 'font-size: 10pt !important; '+
-         'font-size: 12pt !important; '+
+         // 'font-size: 12pt !important; '+
          '-moz-border-bottom-colors: #505050 #505050 !important; '+
          '-moz-border-top-colors: #505050 #505050  !important; '+
          '-moz-border-right-colors: #505050 #505050  !important; '+
@@ -132,7 +132,7 @@ global_color_theme(
          'color: white !important;'+
          // + 'font-family: GohuFont !important;'
          // + 'line-height: 14px !important;'
-         'font-size: 14px !important;'+
+         // 'font-size: 14px !important;'+
          '}'
          ], $url_prefixes = ["http", "about"]),
 
