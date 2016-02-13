@@ -12,6 +12,7 @@ function resister_stylesheet (name) {
 }
 
 resister_stylesheet("volafile.io");
+resister_stylesheet("about-blank");
 // resister_stylesheet("hacker-news");
 // resister_stylesheet("wikipedia");
 // resister_stylesheet("github.com");

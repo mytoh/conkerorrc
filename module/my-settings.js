@@ -7,8 +7,6 @@ require("favicon");
 require("clicks-in-new-buffer");
 require("adblockplus");
 
-theme_load("default");
-
 
 //// homepage
 let (home = get_home_directory()) {

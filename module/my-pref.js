@@ -70,7 +70,7 @@ session_pref("network.http.spdy.enabled.http2draft", true);
 // session_pref("media.mediasource.whitelist", true);
 
 // openh264
-session_pref("media.gmp-gmpopenh264.enabled", true);
+session_pref("media.gmp-gmpopenh264.enabled", false);
 
 // [[https://gist.github.com/haasn/69e19fc2fe0e25f3cff5]]
 /// WebSockets

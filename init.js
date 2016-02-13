@@ -25,3 +25,4 @@ require("my-org");
 require("my-selection-search");
 require("color-theme");
 require("my-font");
+require("my-theme");
