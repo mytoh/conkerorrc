@@ -21,4 +21,8 @@ define_webjump("gi", "https://www.google.com/search?tbm=isch&q=%s");
 // google search by image
 define_webjump("gI", "https://encrypted.google.com/searchbyimage?safe=off&hl=en&site=search&image_url=%s");
 
+// github
+define_webjump("gh","https://github.com/%s");
+
+
 provide("my-webjumps");

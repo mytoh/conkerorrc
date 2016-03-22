@@ -133,12 +133,12 @@ session_pref("toolkit.telemetry.enabled", false);
 session_pref("network.http.speculative-parallel-limit", 0);
 
 // Cryptography hardening
-session_pref("security.tls.unrestricted_rc4_fallback", false);
-session_pref("security.tls.insecure_fallback_hosts.use_static_list", false);
-session_pref("security.tls.version.min", 1);
-session_pref("security.ssl.require_safe_negotiation", true);
-session_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
-session_pref("security.ssl3.rsa_seed_sha", true);
+// session_pref("security.tls.unrestricted_rc4_fallback", false);
+// session_pref("security.tls.insecure_fallback_hosts.use_static_list", false);
+// session_pref("security.tls.version.min", 1);
+// session_pref("security.ssl.require_safe_negotiation", true);
+// session_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
+// session_pref("security.ssl3.rsa_seed_sha", true);
 // session_pref("security.OCSP.enabled", 1);
 // session_pref("security.OCSP.require", true);
 
