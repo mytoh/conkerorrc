@@ -132,6 +132,10 @@ session_pref("toolkit.telemetry.enabled", false);
 // Link pre-fetching
 session_pref("network.http.speculative-parallel-limit", 0);
 
+// font cache, workaround from emojione-color-font
+session_pref("gfx.font_rendering.fontconfig.fontlist.enabled", false);
+
+
 // Cryptography hardening
 // session_pref("security.tls.unrestricted_rc4_fallback", false);
 // session_pref("security.tls.insecure_fallback_hosts.use_static_list", false);
