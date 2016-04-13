@@ -133,7 +133,12 @@ session_pref("toolkit.telemetry.enabled", false);
 session_pref("network.http.speculative-parallel-limit", 0);
 
 // font cache, workaround from emojione-color-font
-session_pref("gfx.font_rendering.fontconfig.fontlist.enabled", false);
+// * [The Firefox internal font cache is not cleared when the fontconfig
+//   changes][11]. Manually clear it in `about.config`, by setting
+//   `gfx.font_rendering.fontconfig.fontlist.enabled` to `false`, restarting, and
+//   setting it back to `true`. This may be encountered upgrading from v1.0-beta2
+//   to v1.0-beta3.
+session_pref("gfx.font_rendering.fontconfig.fontlist.enabled", true);
 
 
 // Cryptography hardening
