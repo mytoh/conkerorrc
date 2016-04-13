@@ -1,0 +1,28 @@
+
+
+*:not(img) {
+    background: #121417 !important;
+    color:      #ABB2BF!important;
+}
+
+:link, :link * {
+    color: #61AFEF !important;
+}
+
+:visited, :visited * {
+
+    color: #D19A66 !important;
+}
+
+/* youtube  */
+
+@-moz-document domain("youtube.com") {
+
+/* div.html5-video-container *, */
+/* div#movie_player */
+
+div#movie_player * {
+    background-color: transparent !important;
+}
+}
+
