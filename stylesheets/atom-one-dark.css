@@ -1,8 +1,8 @@
 
 
 *:not(img) {
-    background: #121417 !important;
-    color:      #ABB2BF!important;
+    background-color: #121417 !important;
+    color:      #ABB2BF !important;
 }
 
 :link, :link * {
@@ -16,13 +16,60 @@
 
 /* youtube  */
 
-@-moz-document domain("youtube.com") {
+@-moz-document regexp("https?://apis.google.com/.*/hovercard.*"), regexp("https?://www.youtube.(com|([a-z]{2}))(.[a-z]{2})?/((\\?|channel|results|feed|playlist|feature|watch|user|hovercard|upload|my_videos|view_all_playlists|subscription_manager|dashboard|subscribers|c|#|messages|analytics).*)"), regexp("https?://www.youtube.(com|([a-z]{2}))(.[a-z]{2})?."), regexp("https?://apis.google.com/u/b/.*") {
 
-/* div.html5-video-container *, */
-/* div#movie_player */
+    /* div.html5-video-container *, */
+    /* div#movie_player */
 
-div#movie_player * {
-    background-color: transparent !important;
+    
+    *:not(img) {
+        background-color: #121417 !important;
+        color:      #ABB2BF !important;
+    }
+
+    div#movie_player * {
+        background-color: transparent !important;
+        opacyty:          0.3         !important;
+        /* background-color: rgba(0, 0, 0, 0.5); */
+    }
+
 }
+
+@-moz-document domain("reddit.com") {
+    div.arrow.down {
+        color: blue !important;
+    }
+    span.fancy-toggle-button.subscribe-button {
+        color: lime !important;
+    }
 }
 
+@-moz-document domain("github.com") {
+
+    * {
+        background: transparent !important;
+    }
+
+    /* diff addition */
+    td.blob-code.blob-code-addition  {
+        background-color: red !important;
+    }
+    td.blob-code.blob-code-addition span.code-blob-inner {
+        background-color: red !important;
+    }
+    td.blob-code.blob-code-addition.is-hovered  {
+        background-color: orange !important;
+    }
+ /* diff deletion */
+    td.blob-code.blob-code-deletion {
+        background-color: #56B6C2 !important;
+    }
+
+    td.blob-code.blob-code-deletion span.code-blob-inner {
+        background-color: #56B6C2!important;
+    }
+
+    td.blob-code.blob-code-deletion.is-hovered {
+        background-color: #61AFEF !important;
+    }
+}
