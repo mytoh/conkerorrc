@@ -155,8 +155,10 @@ session_pref("gfx.font_rendering.fontconfig.fontlist.enabled", true);
 // security.ssl.treat_unsafe_negotiation_as_broken=true
 
 
-
-
+/// css features
+session_pref("layout.css.grid.enabled", true);
+session_pref("layout.css.font-loading-api.enabled", true);
+session_pref("layout.css.unicode-range.enabled", true);
 
 
 provide("my-pref");

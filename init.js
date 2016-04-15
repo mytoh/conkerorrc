@@ -23,6 +23,6 @@ require("my-css");
 require("my-pref");
 require("my-org");
 require("my-selection-search");
-require("color-theme");
+// require("color-theme");
 require("my-font");
 require("my-theme");
