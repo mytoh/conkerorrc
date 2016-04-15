@@ -2,7 +2,7 @@
 
 *:not(img) {
     background-color: #121417 !important;
-    color:      #ABB2BF !important;
+    color:      #ABB2BF  !important;
 }
 
 :link, :link * {
@@ -46,10 +46,6 @@
 
 @-moz-document domain("github.com") {
 
-    * {
-        background: transparent !important;
-    }
-
     /* diff addition */
     td.blob-code.blob-code-addition  {
         background-color: red !important;
@@ -60,7 +56,7 @@
     td.blob-code.blob-code-addition.is-hovered  {
         background-color: orange !important;
     }
- /* diff deletion */
+    /* diff deletion */
     td.blob-code.blob-code-deletion {
         background-color: #56B6C2 !important;
     }
@@ -72,4 +68,26 @@
     td.blob-code.blob-code-deletion.is-hovered {
         background-color: #61AFEF !important;
     }
+}
+
+
+@-moz-document regexp(".*chan.*") {
+
+    /* .post.reply { */
+    /*     background-color: #221417 !important; */
+    /* } */
+
+    
+/* .highlightPost:not(.op) { */
+/*     background-color: red !important; */
+/*     border-color: green !important; */
+/* } */
+
+.reply:target,
+.reply.highlight {
+    background: #221427 !important;
+    border: 4px solid red !important;
+    padding: 2px;
+}
+
 }
