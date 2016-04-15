@@ -16,6 +16,6 @@ function resister_stylesheet (name) {
 // resister_stylesheet("hacker-news");
 // resister_stylesheet("wikipedia");
 // resister_stylesheet("github.com");
- resister_stylesheet("atom-one-dark");
+ resister_stylesheet("dark");
 
 provide("my-css");
