@@ -1,38 +1,36 @@
-
-
 *:not(img) {
-    background-color: #121417 !important;
-    color:      #ABB2BF  !important;
+    background-color: #252629 !important;
+    color: #ABB2BF !important;
 }
 
-:link, :link * {
+:link,
+:link * {
     color: #61AFEF !important;
 }
 
-:visited, :visited * {
-
+:visited,
+:visited * {
     color: #D19A66 !important;
 }
 
+
 /* youtube  */
 
-@-moz-document regexp("https?://apis.google.com/.*/hovercard.*"), regexp("https?://www.youtube.(com|([a-z]{2}))(.[a-z]{2})?/((\\?|channel|results|feed|playlist|feature|watch|user|hovercard|upload|my_videos|view_all_playlists|subscription_manager|dashboard|subscribers|c|#|messages|analytics).*)"), regexp("https?://www.youtube.(com|([a-z]{2}))(.[a-z]{2})?."), regexp("https?://apis.google.com/u/b/.*") {
-
+@-moz-document regexp("https?://apis.google.com/.*/hovercard.*"),
+regexp("https?://www.youtube.(com|([a-z]{2}))(.[a-z]{2})?/((\\?|channel|results|feed|playlist|feature|watch|user|hovercard|upload|my_videos|view_all_playlists|subscription_manager|dashboard|subscribers|c|#|messages|analytics).*)"),
+regexp("https?://www.youtube.(com|([a-z]{2}))(.[a-z]{2})?."),
+regexp("https?://apis.google.com/u/b/.*") {
     /* div.html5-video-container *, */
     /* div#movie_player */
-
-    
     *:not(img) {
-        background-color: #121417 !important;
-        color:      #ABB2BF !important;
+        background-color: #252629 !important;
+        color: #ABB2BF !important;
     }
-
     div#movie_player * {
         background-color: transparent !important;
-        opacyty:          0.3         !important;
+        opacyty: 0.3 !important;
         /* background-color: rgba(0, 0, 0, 0.5); */
     }
-
 }
 
 @-moz-document domain("reddit.com") {
@@ -45,49 +43,44 @@
 }
 
 @-moz-document domain("github.com") {
-
     /* diff addition */
-    td.blob-code.blob-code-addition  {
-        background-color: red !important;
+    td.blob-code.blob-code-addition {
+        background-color: #56B6C2 !important;
     }
     td.blob-code.blob-code-addition span.code-blob-inner {
-        background-color: red !important;
+        background-color: #56B6C2!important;
     }
-    td.blob-code.blob-code-addition.is-hovered  {
-        background-color: orange !important;
+    td.blob-code.blob-code-addition.is-hovered {
+        background-color: #61AFEF !important;
     }
     /* diff deletion */
     td.blob-code.blob-code-deletion {
-        background-color: #56B6C2 !important;
+        background-color: red !important;
     }
-
     td.blob-code.blob-code-deletion span.code-blob-inner {
-        background-color: #56B6C2!important;
+        background-color: red !important;
     }
-
     td.blob-code.blob-code-deletion.is-hovered {
-        background-color: #61AFEF !important;
+        background-color: orange !important;
     }
 }
 
-
 @-moz-document regexp(".*chan.*") {
-
     /* .post.reply { */
     /*     background-color: #221417 !important; */
     /* } */
-
-    
-/* .highlightPost:not(.op) { */
-/*     background-color: red !important; */
-/*     border-color: green !important; */
-/* } */
-
-.reply:target,
-.reply.highlight {
-    background: #221427 !important;
-    border: 4px solid red !important;
-    padding: 2px;
-}
-
+    /* .highlightPost:not(.op) { */
+    /*     background-color: red !important; */
+    /*     border-color: green !important; */
+    /* } */
+    .reply:target,
+    .reply.highlight {
+        background: #221427 !important;
+        border: 4px solid red !important;
+        padding: 2px;
+    }
+    div.post.reply.highlighted {
+        background: #f0c0b0 !important;
+        border-color: #d9bfb7 !important;
+    }
 }
