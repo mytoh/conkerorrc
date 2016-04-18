@@ -84,3 +84,18 @@ regexp("https?://apis.google.com/u/b/.*") {
         border-color: #d9bfb7 !important;
     }
 }
+
+@-moz-document domain("gitter.im") {
+    .chat-item__content {
+        color: #DBDBDB;
+    }
+}
+
+@-moz-document domain("tumblr.com") {
+    div#right_column.right_column {
+        display: none !important;
+    }
+    li.post_container > div.is_mine {
+        display: none !important;
+    }
+}
