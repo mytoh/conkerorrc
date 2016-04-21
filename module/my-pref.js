@@ -149,7 +149,7 @@ session_pref("gfx.font_rendering.fontconfig.fontlist.enabled", true);
 // session_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
 // session_pref("security.ssl3.rsa_seed_sha", true);
 // session_pref("security.OCSP.enabled", 1);
-// session_pref("security.OCSP.require", true);
+session_pref("security.OCSP.require", false);
 
 // security.ssl.require_safe_negotiation=true
 // security.ssl.treat_unsafe_negotiation_as_broken=true
