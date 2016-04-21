@@ -1,7 +1,10 @@
 
-theme_load("default");
+// theme_load("default");
  // theme_load("gesso");
  // theme_load("mono");
+theme_unload("default");
+theme_load_paths.unshift("~/.conkerorrc/style/");
+ theme_load("monoral");
 
 // function theme_zenburn () {
 // theme_load_paths.unshift(" ~/.emacs.d/vendor/github.com/ivoarch/");
