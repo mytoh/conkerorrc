@@ -1,4 +1,4 @@
-*:not(img) {
+html *:not(img) {
     background-color: #252629 !important;
     color: #ABB2BF !important;
 }
