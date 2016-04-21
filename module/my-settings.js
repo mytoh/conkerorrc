@@ -47,6 +47,7 @@ url_remoting_fn = load_url_in_new_buffer;
 
 // new-tabs
 tab_bar_show_icon = true;
+tab_bar_flex_tabs = true;
 
 // load download buffers in the background in the current
 // window, instead of in new windows.
