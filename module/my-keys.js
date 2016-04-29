@@ -42,5 +42,7 @@ define_key(default_global_keymap, "C-c r", "reload-config");
 
 // mini buffer
 define_key(minibuffer_keymap, "C-h", "cmd_deleteCharBackward");
+define_key(minibuffer_keymap, "C-j", "minibuffer-complete");
+define_key(minibuffer_keymap, "C-k", "minibuffer-complete-previous");
 
 provide("my-keys");
