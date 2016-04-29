@@ -1,6 +1,10 @@
 /* http://conkeror.org/Tabs/skorpanBlack */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul") ;
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 * {
-    font-family: monospace;
+  font-family: monospace;
+}
+
+browser {
+  background-color: rgba(56, 60, 74, 0.999) !important;
 }

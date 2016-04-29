@@ -14,21 +14,22 @@
 
 .tab2-label {
     -moz-box-flex: 100;
-    margin-left: 4pt;
+    margin-left: 1pt;
     padding-top: 1pt;
 }
 
 .tab2-index {
-    padding: 0pt 2pt 0pt 3pt;
+    width: 11px;
+    padding: 0pt 0pt 0pt 1pt;
     font-weight: 900;
     text-align: center;
 }
 
 .tab2-icon {
-    width: 16px;
-    height: 16px;
-    -moz-margin-start: 4pt;
-    -moz-margin-end: 3pt;
+    width: 15px;
+    height: 15px;
+    -moz-margin-start: 1pt;
+    -moz-margin-end: 1pt;
 }
 
 #tab2-bar .tab2[selected=true] {

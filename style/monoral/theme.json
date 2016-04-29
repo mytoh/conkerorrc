@@ -1,7 +1,8 @@
 
 { "sheets": [
-    "conkeror--monoral.css",
-    "new-tabs--monoral.css",
-    "minibuffer--monoral.css"
+    "conkeror--monoral.css"
+    , "new-tabs--monoral.css"
+    , "minibuffer--monoral.css"
+    , "hints--monoral.css"
   ]
 }
