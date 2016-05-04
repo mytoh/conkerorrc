@@ -1,4 +1,8 @@
 
+// http://conkeror.org/Appearance
+session_pref("browser.display.background_color",  "#383C4A");
+
+
 // theme_load("default");
  // theme_load("gesso");
  // theme_load("mono");
