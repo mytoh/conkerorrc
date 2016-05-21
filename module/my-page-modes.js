@@ -15,7 +15,7 @@ require("wikipedia");
 require("xkcd");
 require("youtube-player");
 require("youtube");
-require("reddit");
+// require("reddit");
 
 
 function my_add_page_modes_path () {
@@ -27,7 +27,7 @@ function my_add_page_modes_path () {
 my_add_page_modes_path();
 
 
-require("tumblr");
+// require("tumblr");
 
 //page_mode_deactivate(github_mode);
 

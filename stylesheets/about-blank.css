@@ -3,9 +3,13 @@ before homepage loads...
 see userChrome.css for background before clicked link page loads */
 
 @-moz-document url(about:blank) {
-    html { background-color: rgb(220, 220, 220) !important; }}
+    html {
+        background-color: rgb(220, 220, 220) !important;
+    }
+}
 
 /* added dickvls just because */
 
 @-moz-document url-prefix(about:blank) {
-    * { background-color: rgb(220, 220, 220); }}
+    * { background-color: rgb(220, 220, 220); }
+}

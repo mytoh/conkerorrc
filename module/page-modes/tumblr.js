@@ -20,6 +20,24 @@ define_key(tumblr_keymap, "?", null, $fallthrough);
 define_key(tumblr_keymap, "space", null, $fallthrough);
 define_key(tumblr_keymap, "u", escape );
 
+// next page
+function tumblr_next_page (I) {
+    var doc = I.buffer.document;
+    var next = doc.getElementById("next_page_link");
+if (next) {
+        I.minibuffer.message(next);
+            dom_node_click(next, 1, 1);
+
+} else {
+        I.minibuffer.message("can't find next page");
+}
+
+}
+
+interactive("tumblr_next_page",
+    "Open next page",
+    tumblr_next_page);
+define_key(tumblr_keymap, ">", "tumblr_next_page");
 
 define_keymaps_page_mode("tumblr-mode",
     build_url_regexp($domain = "tumblr",

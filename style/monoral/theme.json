@@ -4,5 +4,6 @@
     , "new-tabs--monoral.css"
     , "minibuffer--monoral.css"
     , "hints--monoral.css"
+    , "scrollbars--monoral.css"
   ]
 }
