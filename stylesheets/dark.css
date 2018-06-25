@@ -1,46 +1,93 @@
 @import 'vendor/normalize.css';
 
+:root {
+
+  /* TAB VARIABLES */
+
+  /* --bg-light: #170f0d; */
+  --bg-light: hsl(230, 15%, 20%);
+  --bg-dark: #160e0c;
+  --fg-light: #d2deab;
+
+  /* --fg-dark: #997744; */
+
+  /* --fg-dark: #9d9d9d; */
+  --fg-dark: hsl(240, 10%, 70%);
+  --tab-triangle-correction: -1px;
+  --tab-height: 18px;
+  --tab-icon-size: 12px;
+  --tab-strip-margin: -12px;
+  --tab-overlap: -5px;
+  --tab-fonts: "Terminus", monospace, "Dejavu Sans";
+  --tab-font-size: 9pt;
+  --tab-text-align: center; /* left | center | right */
+  --tab-triangle: block; /* block | none */
+
+  /* URL VARIABLES */
+  --url-background: var(--bg-light);
+
+  /* --url-color: var(--fg-light); */
+  --url-color: #7ca3ab;
+  --url-visited-color: #d19a66;
+  --url-height: 18px;
+  --url-right-margin: 8px;
+  --url-fonts: "Terminus", monospace, "Dejavu Sans";
+  --url-font-size: 9pt;
+  --url-text-align: left; /* left | center | right */
+  --url-position: absolute; /* absolute == top (under tabs) || fixed == bottom of browser */
+}
+
 html *:not(img) {
   background-color: #252629 !important;
-  color: #bbcfef !important;
+
+  /* color: #bbcfef !important; */
+  color: var(--fg-dark) !important;
+  border-color: #421c52;
+  text-decoration: none;
 
   /* color: #6c99bb; */
 }
 
-body {
-  background-image: none !important;
+/* body { */
+/*   background-image: none !important; */
+/* } */
+
+pre code {
+    text-decoration: initial !important;
+    font-style: normal !important;
+    font-weight: normal !important;
 }
 
 :link,
 :link * {
-  color: #61afef !important;
+  color: var(--url-color) !important;
 }
 
 :visited,
 :visited * {
-  color: #d19a66 !important;
+  color: var(--url-visited-color) !important;
 }
 
 /* youtube  */
-@-moz-document regexp("https?://apis.google.com/.*/hovercard.*"),
-regexp("https?://www.youtube.(com|([a-z]{2}))(.[a-z]{2})?/((\\?|channel|results|feed|playlist|feature|watch|user|hovercard|upload|my_videos|view_all_playlists|subscription_manager|dashboard|subscribers|c|#|messages|analytics).*)"),
-regexp("https?://www.youtube.(com|([a-z]{2}))(.[a-z]{2})?."),
-regexp("https?://apis.google.com/u/b/.*") {
-  /* div.html5-video-container *, */
+/* @-moz-document regexp("https?://apis.google.com/.*\/hovercard.*"), */
+/* regexp("https?://www.youtube.(com|([a-z]{2}))(.[a-z]{2})?/((\\?|channel|results|feed|playlist|feature|watch|user|hovercard|upload|my_videos|view_all_playlists|subscription_manager|dashboard|subscribers|c|#|messages|analytics).*)"), */
+/* regexp("https?://www.youtube.(com|([a-z]{2}))(.[a-z]{2})?."), */
+/* regexp("https?://apis.google.com/u/b/.*") { */
+/*   /\* div.html5-video-container *, *\/ */
 
-  /* div#movie_player */
-  *:not(img) {
-    background-color: #252629 !important;
-    color: #abb2bf !important;
-  }
+/*   /\* div#movie_player *\/ */
+/*   *:not(img) { */
+/*     background-color: #252629 !important; */
+/*     color: #abb2bf !important; */
+/*   } */
 
-  div#movie_player * {
-    background-color: transparent !important;
-    opacyty: 0.3 !important;
+/*   div#movie_player * { */
+/*     background-color: transparent !important; */
+/*     opacyty: 0.3 !important; */
 
-    /* background-color: rgba(0, 0, 0, 0.5); */
-  }
-}
+/*     /\* background-color: rgba(0, 0, 0, 0.5); *\/ */
+/*   } */
+/* } */
 
 @-moz-document domain("reddit.com") {
   div.arrow.down {
@@ -62,7 +109,7 @@ regexp("https?://apis.google.com/u/b/.*") {
   code,
   .md pre code {
     color: #333 !important;
-    background: #efeadc !important;
+    background: #bfbaac !important;
     border: 1px solid #ccc !important;
     border-radius: 4px !important;
 
@@ -606,7 +653,7 @@ regexp("https?://apis.google.com/u/b/.*") {
 
   /* } */
   .reply {
-    border-color: #332538 #important;
+    border-color: #a385b8 #important;
   }
 
   .reply:target,
@@ -624,6 +671,10 @@ regexp("https?://apis.google.com/u/b/.*") {
   .quote {
     color: #b3a89b !important;
   }
+  
+.party-hat {
+    display: none;
+}
 }
 
 @-moz-document domain("tumblr.com") {
@@ -655,37 +706,1103 @@ regexp("https?://apis.google.com/u/b/.*") {
   }
 }
 
-@-moz-document url-prefix("https://gitter.im/") {
-  /* Hosted at https://userstyles.org/styles/126908/gitter-don-t */
-  header,
-  #right-toolbar-layout,
-  #profile-region,
-  .menu__create-room-wrapper {
-    display: none !important;
+@-moz-document domain("hitbox.tv") {
+  #media-controls {
+    opacity: 0 !important;
+    background: transparent !important;
   }
 
-  .chat-and-toolbar-wrapper {
-    padding: 2px;
+  #live-player.home {
+    opacity: 0 !important;
+    background: transparent !important;
+  }
+}
+
+@-moz-document domain("gitter.im") {
+  * {
+    color: unset;
   }
 
-  #favs-region {
-    padding-top: 30px;
+  .chat-input__text-area {
+
+    /* color: white !important; */
+
+    /* background-color: #000 !important; */
+
+    /* padding-left: 1em; */
+
+    /* box-shadow: 0px 0px 5px #444; */
+    all: unset;
+  }
+
+  .chat-input__box {
+    all: unset;
+
+    /* color: white !important; */
+
+    /* background-color: #000 !important; */
+  }
+}
+
+@-moz-document domain("gitlab.com") {
+  body {
+    background-color: #111 !important;
+    color: #92959c;
+  }
+
+  a {
+    color: #91a9c7;
+  }
+
+  a:hover,
+  a:focus {
+    color: #acc6e6;
   }
 
   code {
-    max-height: 100px;
-    overflow: scroll;
+    background-color: #420716;
+    color: #dc4f72;
   }
 
-  body,
-  #chat-container,
-  .chat-item,
-  .room-list-item--current-room {
-    background-color: #faf5e0 !important;
+  .label-branch {
+    color: #ccc;
   }
 
-  .menu__hotspot {
-    opacity: 0.1;
-    margin-top: -100px;
+  .label-primary {
+    background-color: #165575;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  header.navbar-gitlab {
+    background-color: #2d2d2d;
+    border-color: #555;
+  }
+
+  header .header-content .title,
+  header .header-content .title a {
+    color: #999;
+  }
+
+  .cover-block,
+  .content-block,
+  .gray-content-block,
+  .file-holder .file-title {
+    background-color: #272727;
+    border-color: #555;
+  }
+
+  .cover-block .cover-title h1 {
+    color: #999;
+  }
+
+  .content-wrapper .container-fluid,
+  .content > .clearfix > .container-fluid {
+    background-color: #111;
+    border-color: #555;
+  }
+
+  .content-block.white,
+  .gray-content-block.white,
+  .file-holder .file-content,
+  .project-stats,
+  .row-content-block {
+    background-color: #1a1a1a;
+    border-color: #555;
+  }
+
+  .row-content-block.clear-block {
+    margin-bottom: 0;
+  }
+
+  .content > .clearfix > .container-fluid > .second-block,
+  .content > .clearfix > .container-fluid > .top-area,
+  body[data-page="projects:commits:show"] #commits-list > li,
+  .build-page > .build-header,
+  .build-page > .nav-links {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .file-holder .file-title a:not(.btn) {
+    color: #bbb;
+  }
+
+  .top-area {
+    border-color: #555;
+  }
+
+  .row-content-block {
+    border-color: #555;
+    color: #999;
+  }
+
+  .row-content-block.build-content {
+    background-color: #111;
+  }
+
+  .gray-content-block.second-block {
+    border-bottom: 1px solid #555;
+    padding: 3px 0;
+  }
+
+  .gray-content-block.second-block > .pull-right > .append-bottom-default {
+    margin: 0;
+  }
+
+  .gray-content-block.second-block > .pull-right > .append-bottom-default > .btn {
+    padding: 2px 8px;
+  }
+
+  .gray-content-block.second-block::after {
+    content: ' ';
+    clear: both;
+    display: table;
+  }
+
+  .nav-links {
+    border-color: #777;
+  }
+
+  .nav-links li:hover a {
+    color: #b5b4b4;
+  }
+
+  .layout-nav .nav-links li:hover a,
+  .layout-nav .nav-links li:hover i {
+    color: #ccc;
+  }
+
+  .nav-links li.active a,
+  .center-top-menu li.active a,
+  .layout-nav .nav-links li.active a,
+  .layout-nav .nav-links li.active i {
+    color: #fff;
+  }
+
+  .nav-links.sub-nav,
+  .nav-links.sub-nav .container-fluid {
+    background-color: #252525;
+    border-color: #444;
+  }
+
+  .nav-links.sub-nav li a {
+    margin: 0;
+    padding: 5px 10px 3px;
+  }
+
+  .breadcrumb.repo-breadcrumb a {
+    color: #999;
+  }
+
+  .projects-search-form {
+    background-color: #272727;
+    border-color: #777;
+  }
+
+  .projects-list > li,
+  .projects-list .project-row {
+    border-color: #555;
+  }
+
+  .projects-list .project-row .project-full-name {
+    color: #999;
+  }
+
+  .project-stats .nav > li > a,
+  .btn,
+  .project-home-panel .visibility-level-label,
+  .snippet-holder .file-actions .btn-clipboard,
+  .commit button {
+    background-color: #111;
+    border-color: #555;
+    color: #999;
+  }
+
+  .commit a,
+  ul.content-list > li a,
+  .divergence-graph .graph-side .count {
+    color: #999;
+  }
+
+  .divergence-graph .graph-side .bar,
+  .divergence-graph .graph-separator {
+    background-color: #444;
+  }
+
+  .branch-commit .commit-id,
+  .branch-commit .commit-row-message {
+    color: #777;
+  }
+
+  .btn.btn-gray,
+  .project-home-panel .visibility-level-label,
+  .snippet-holder .file-actions .btn-gray.btn-clipboard,
+  .snippet-holder .file-actions .project-home-panel .btn-clipboard.visibility-level-label,
+  .project-home-panel .snippet-holder .file-actions .btn-clipboard.visibility-level-label,
+  .project-home-panel .project-repo-buttons .btn,
+  .project-home-panel .project-repo-buttons .visibility-level-label,
+  .project-home-panel .project-repo-buttons .snippet-holder .file-actions .btn-clipboard,
+  .snippet-holder .file-actions .project-home-panel .project-repo-buttons .btn-clipboard {
+    background-color: #333;
+    border-color: #777;
+    color: #ddd;
+  }
+
+  .project-stats .nav > li > a:hover,
+  .project-stats .nav > li > a:focus,
+  .btn.btn-gray:hover,
+  .project-home-panel .visibility-level-label:hover,
+  .snippet-holder .file-actions .btn-gray.btn-clipboard:hover,
+  .btn.btn-gray:focus,
+  .project-home-panel .visibility-level-label:focus,
+  .snippet-holder .file-actions .btn-gray.btn-clipboard:focus,
+  .project-home-panel .project-repo-buttons .btn:hover,
+  .project-home-panel .project-repo-buttons .visibility-level-label:hover,
+  .project-home-panel .project-repo-buttons .snippet-holder .file-actions .btn-clipboard:hover,
+  .snippet-holder .file-actions .project-home-panel .project-repo-buttons .btn-clipboard:hover,
+  .project-home-panel .project-repo-buttons .btn:focus,
+  .project-home-panel .project-repo-buttons .visibility-level-label:focus,
+  .project-home-panel .project-repo-buttons .snippet-holder .file-actions .btn-clipboard:focus,
+  .snippet-holder .file-actions .project-home-panel .project-repo-buttons .btn-clipboard:focus,
+  .btn:hover,
+  .project-home-panel .visibility-level-label:hover,
+  .snippet-holder .file-actions .btn-clipboard:hover,
+  .btn:focus,
+  .project-home-panel .visibility-level-label:focus,
+  .snippet-holder .file-actions .btn-clipboard:focus {
+    background-color: #444;
+    border-color: #888;
+    color: #fff;
+  }
+
+  .btn.btn-close:hover,
+  .btn.btn-close:focus {
+    color: #e52c5a;
+    border-color: #e52c5a;
+  }
+
+  .btn.btn-success,
+  .snippet-holder .file-actions .btn-success.btn-clipboard,
+  .btn.btn-new,
+  .snippet-holder .file-actions .btn-new.btn-clipboard,
+  .btn.btn-create,
+  .btn.comment-btn,
+  .snippet-holder .file-actions .comment-btn.btn-clipboard,
+  .snippet-holder .file-actions .btn-create.btn-clipboard,
+  .btn.btn-save,
+  .snippet-holder .file-actions .btn-save.btn-clipboard,
+  .input-group-btn .btn-green {
+    background-color: #17502e;
+  }
+
+  .btn.btn-success:hover,
+  .snippet-holder .file-actions .btn-success.btn-clipboard:hover,
+  .btn.btn-success:focus,
+  .snippet-holder .file-actions .btn-success.btn-clipboard:focus,
+  .btn.btn-new:hover,
+  .snippet-holder .file-actions .btn-new.btn-clipboard:hover,
+  .btn.btn-new:focus,
+  .snippet-holder .file-actions .btn-new.btn-clipboard:focus,
+  .btn.btn-create:hover,
+  .btn.comment-btn:hover,
+  .snippet-holder .file-actions .comment-btn.btn-clipboard:hover,
+  .snippet-holder .file-actions .btn-create.btn-clipboard:hover,
+  .btn.btn-create:focus,
+  .btn.comment-btn:focus,
+  .snippet-holder .file-actions .comment-btn.btn-clipboard:focus,
+  .snippet-holder .file-actions .btn-create.btn-clipboard:focus,
+  .btn.btn-save:hover,
+  .snippet-holder .file-actions .btn-save.btn-clipboard:hover,
+  .btn.btn-save:focus,
+  .snippet-holder .file-actions .btn-save.btn-clipboard:focus,
+  .input-group-btn .btn-green:hover,
+  .input-group-btn .btn-green:focus {
+    background-color: #1d683b;
+  }
+
+  .btn.btn-danger,
+  .project-home-panel .btn-danger.visibility-level-label,
+  .snippet-holder .file-actions .btn-danger.btn-clipboard,
+  .btn.btn-remove,
+  .project-home-panel .btn-remove.visibility-level-label,
+  .snippet-holder .file-actions .btn-remove.btn-clipboard,
+  .btn.btn-red,
+  .project-home-panel .btn-red.visibility-level-label,
+  .snippet-holder .file-actions .btn-red.btn-clipboard {
+    background-color: #863832;
+    border-color: #f24f41;
+  }
+
+  .btn.btn-danger:hover,
+  .project-home-panel .btn-danger.visibility-level-label:hover,
+  .snippet-holder .file-actions .btn-danger.btn-clipboard:hover,
+  .btn.btn-danger:focus,
+  .project-home-panel .btn-danger.visibility-level-label:focus,
+  .snippet-holder .file-actions .btn-danger.btn-clipboard:focus,
+  .btn.btn-remove:hover,
+  .project-home-panel .btn-remove.visibility-level-label:hover,
+  .snippet-holder .file-actions .btn-remove.btn-clipboard:hover,
+  .btn.btn-remove:focus,
+  .project-home-panel .btn-remove.visibility-level-label:focus,
+  .snippet-holder .file-actions .btn-remove.btn-clipboard:focus,
+  .btn.btn-red:hover,
+  .project-home-panel .btn-red.visibility-level-label:hover,
+  .snippet-holder .file-actions .btn-red.btn-clipboard:hover,
+  .btn.btn-red:focus,
+  .project-home-panel .btn-red.visibility-level-label:focus,
+  .snippet-holder .file-actions .btn-red.btn-clipboard:focus {
+    background-color: #b84d45;
+    border-color: #fb3929;
+  }
+
+  .input-group-btn .active {
+    background-color: #444 !important;
+    border-color: #999 !important;
+  }
+
+  .input-group .input-group-addon,
+  .git-clone-holder .input-group-addon {
+    background-color: #222;
+  }
+
+  .pagination > .disabled > span,
+  .pagination > .disabled > span:hover,
+  .pagination > .disabled > span:focus,
+  .pagination > .disabled > a,
+  .pagination > .disabled > a:hover,
+  .pagination > .disabled > a:focus {
+    background-color: #222;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .detail-page-description .title {
+    color: #bbb;
+  }
+
+  .project-home-panel .project-home-desc h1 {
+    color: #999;
+  }
+
+  .project-home-panel .project-home-desc p {
+    color: #888;
+  }
+
+  header.navbar-gitlab .side-nav-toggle {
+    background: #444;
+  }
+
+  header.navbar-gitlab .side-nav-toggle:hover {
+    background: #554;
+  }
+
+  header .search .search-input,
+  .project-home-panel .git-clone-holder .form-control,
+  .select2-container .select2-choice,
+  .select2-container.select2-drop-above .select2-choice,
+  .form-control,
+  .issue-search-form .issue_search,
+  .select2-container-multi .select2-choices,
+  .select2-drop,
+  .select2-drop-active .select2-search input,
+  input[type='search'],
+  .search form {
+    background-color: #111;
+    border-color: #777;
+    color: #bbb;
+  }
+
+  .issue-search-form .issue_search {
+    border-color: #777 !important;
+  }
+
+  .select2-container .select2-choice .select2-arrow,
+  .select2-container.select2-drop-above .select2-choice .select2-arrow {
+    background-color: #111;
+  }
+
+  .select2-container-multi .select2-choices .select2-search-choice {
+    background-color: #443;
+    border-color: #777;
+    color: #eee;
+  }
+
+  .select2-container .select2-choice .select2-chosen,
+  .select2-container.select2-drop-above .select2-choice .select2-chosen {
+    color: #bbb;
+  }
+
+  .form-control[disabled],
+  .form-control[readonly],
+  fieldset[disabled] .form-control {
+    background-color: #444040;
+    color: #777;
+  }
+
+  .select2-container .select2-choice:hover,
+  .select2-container.select2-drop-above .select2-choice:hover {
+    background-color: #222;
+    border-color: #8b909b;
+  }
+
+  .btn-group-next .btn,
+  .btn-group-next .project-home-panel .visibility-level-label,
+  .project-home-panel .btn-group-next .visibility-level-label,
+  .btn-group-next .snippet-holder .file-actions .btn-clipboard,
+  .snippet-holder .file-actions .btn-group-next .btn-clipboard {
+    border-color: #555;
+  }
+
+  .event-item {
+    border-color: #444;
+  }
+
+  .event-item a {
+    color: #acb6d5;
+  }
+
+  .center-top-menu li .badge {
+    background-color: #444;
+  }
+
+  li.commit .commit-row-title .text-expander {
+    background-color: #333;
+    color: #bbb;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  li.commit .commit-row-title .text-expander:hover {
+    background-color: #555;
+  }
+
+  .commit-box .commit-title {
+    color: #a4aed5;
+  }
+
+  ul.bordered-list > li,
+  ul.content-list > li {
+    border-color: #555;
+  }
+
+  hr,
+  .lists-separator {
+    border-color: #777;
+  }
+
+  .gl-pagination {
+    background-color: #333;
+    border-color: #777;
+  }
+
+  .pagination > li > a,
+  .pagination > li > span {
+    background-color: #333;
+    color: #ccc;
+  }
+
+  .pagination > .active > a,
+  .pagination > .active > a:hover,
+  .pagination > .active > a:focus,
+  .pagination > .active > span,
+  .pagination > .active > span:hover,
+  .pagination > .active > span:focus {
+    background-color: #164d69;
+  }
+
+  .gl-pagination .pagination li > a,
+  .gl-pagination .pagination li > span {
+    border-color: #777;
+  }
+
+  .gl-pagination .pagination li.first > a,
+  .gl-pagination .pagination li.last > a,
+  .gl-pagination .pagination li.next > a,
+  .gl-pagination .pagination li.prev > a {
+    color: #97b1d4;
+  }
+
+  .project-network {
+    border-color: #777;
+  }
+
+  .project-network .controls {
+    background-color: #333;
+    border-color: #777;
+  }
+
+  .project-network .network-graph {
+    background-color: #555;
+  }
+
+  .tint-box,
+  #contributors .person .spark {
+    background-color: #555;
+  }
+
+  .merge-request.merged,
+  .issue.merged,
+  .merge-request.closed,
+  .issue.closed {
+    background-color: #1b1b1b;
+    border-color: #777;
+  }
+
+  .mr-state-widget {
+    background-color: #222;
+    border-color: #777;
+  }
+
+  .mr-state-widget .ci_widget {
+    border-color: #777;
+  }
+
+  .mr-state-widget .ci_widget.ci-skipped {
+    background-color: #333;
+  }
+
+  .mr-state-widget .mr-widget-body h4 {
+    color: #bbb;
+  }
+
+  .timeline .timeline-entry {
+    background-color: #222;
+    border-color: #555;
+  }
+
+  .timeline .timeline-entry:target {
+    background-color: #1a2a2a;
+  }
+
+  ul.notes > li.note {
+    border-color: #555;
+  }
+
+  ul.notes .system-note {
+    background-color: #111;
+  }
+
+  .diff-file {
+    border-color: #999;
+  }
+
+  .timeline .diff-file {
+    border-color: #777;
+  }
+
+  .diff-file .diff-header {
+    background-color: #333;
+    border-color: #777;
+    color: #bbb;
+  }
+
+  .diff-file .diff-content,
+  .code.white,
+  .code.white pre.code,
+  .code.white .line_holder .line_content,
+  pre,
+  .diff-file .diff-content table .line_holder td {
+    background-color: #222 !important;
+    border-color: #666 !important;
+    color: #ddd !important;
+  }
+
+  .code.dark.col-md-10 {
+    background-color: transparent !important;
+  }
+
+  .diff-file .diff-content .line_content.matched {
+    background-color: #2e2e2e !important;
+    color: #999 !important;
+  }
+
+  .diff-file .diff-content .old_line,
+  .diff-file .diff-content .new_line,
+  .diff-file .diff-content .diff_line,
+  .code.white .line-numbers,
+  .code.white .diff-line-num {
+    background-color: #444 !important;
+    border-color: #777 !important;
+    color: #bbb !important;
+  }
+
+  .diff-file .diff-content tr.line_holder:hover > td.new_line,
+  .diff-file .diff-content tr.line_holder:hover > td.old_line {
+    background-color: #666 !important;
+    border-color: #999 !important;
+  }
+
+  .diff-file .diff-content tr.line_holder:hover > td.line_content {
+    background-color: #444 !important;
+    border-color: #999 !important;
+  }
+
+  .diff-file .diff-content .line_holder.old .old_line,
+  .diff-file .diff-content .line_holder.old .new_line {
+    background-color: #533 !important;
+    border-color: #855 !important;
+    color: #b88 !important;
+  }
+
+  .diff-file .diff-content .line_content.old {
+    background-color: #311 !important;
+  }
+
+  .diff-file .diff-content tr.line_holder.old:hover > td.old_line,
+  .diff-file .diff-content tr.line_holder.old:hover > td.new_line {
+    background-color: #744 !important;
+    border-color: #a77 !important;
+  }
+
+  .diff-file .diff-content tr.line_holder.old:hover > td.line_content {
+    background-color: #422 !important;
+  }
+
+  .diff-file .diff-content .old span.idiff {
+    background-color: #552626 !important;
+  }
+
+  .diff-file .diff-content .line_holder.new .old_line,
+  .diff-file .diff-content .line_holder.new .new_line {
+    background-color: #353 !important;
+    border-color: #585 !important;
+    color: #8b8 !important;
+  }
+
+  .diff-file .diff-content .line_content.new {
+    background-color: #131 !important;
+  }
+
+  .diff-file .diff-content tr.line_holder.new:hover > td.old_line,
+  .diff-file .diff-content tr.line_holder.new:hover > td.new_line {
+    background-color: #474 !important;
+    border-color: #7a7 !important;
+  }
+
+  .diff-file .diff-content tr.line_holder.new:hover > td.line_content {
+    background-color: #242 !important;
+  }
+
+  .diff-file .diff-content .new span.idiff {
+    background-color: #265526 !important;
+  }
+
+  .diff-file .notes_holder td {
+    border-color: #777;
+  }
+
+  .diff-file .notes_holder td.notes_line {
+    background-color: #222;
+  }
+
+  .diff-file .notes_holder td.notes_content {
+    background-color: #111;
+    border-color: #777;
+  }
+
+  .discussion-body .notes .note,
+  .diff-file .notes .note {
+    border-color: #777;
+  }
+
+  .discussion-body .discussion-reply-holder,
+  .diff-file .discussion-reply-holder {
+    background-color: #333;
+    border-color: #777;
+  }
+
+  .panel {
+    background-color: #333;
+  }
+
+  .panel-default {
+    border-color: #777;
+  }
+
+  .panel-default > .panel-heading,
+  .panel-default > .panel-footer {
+    color: #f7f8fa;
+    background-color: #54565b;
+    border-color: #777;
+  }
+
+  .form-actions {
+    background-color: #444944;
+    border-color: #777;
+  }
+
+  .blob-commit-info {
+    background-color: #1a1a1a;
+    border-color: #000;
+  }
+
+  li.commit .commit-row-title .commit-row-message {
+    color: #93aac8;
+  }
+
+  li.commit .commit-row-description {
+    background-color: #222;
+    border-color: #333;
+  }
+
+  .issuable-details section,
+  .issuable-sidebar .block {
+    border-color: #555;
+  }
+
+  .right-sidebar {
+    background: #333;
+    color: #f7f8fa;
+  }
+
+  .issuable-sidebar .title {
+    color: #f7f8fa;
+  }
+
+  .light,
+  .description-block {
+    color: #d5d6d8;
+  }
+
+  .common-note-form,
+  .note-form-actions,
+  .comment-hints {
+    background-color: #333337;
+    border-color: #777;
+  }
+
+  .comment-hints {
+    border-color: #555;
+  }
+
+  .markdown-area {
+    background-color: #111;
+    border-color: #777;
+  }
+
+  textarea.js-gfm-input {
+    color: #eee;
+  }
+
+  .md-preview-holder {
+    background-color: #222;
+    border-color: #777;
+  }
+
+  .md,
+  .md p {
+    color: #eee;
+  }
+
+  .zennable input:checked ~ .zen-backdrop {
+    background-color: #000;
+  }
+
+  .zennable input:checked ~ .zen-backdrop textarea {
+    color: #eee;
+  }
+
+  .file-holder {
+    border-color: #111;
+  }
+
+  .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #222;
+  }
+
+  table.table tr th,
+  .file-holder table tr th,
+  .wiki table tr th,
+  .md table tr th,
+  ul.notes .note .note-body .note-text table tr th {
+    border-color: #777 !important;
+  }
+
+  table.table tr td,
+  .file-holder table tr td,
+  .wiki table tr td,
+  .md table tr td,
+  ul.notes .note .note-body .note-text table tr td {
+    border-color: #555 !important;
+  }
+
+  #tree-holder > .tree-content-holder > .table-holder {
+    background-color: #111;
+  }
+
+  .tree-holder .tree-table tr {
+    border-color: #555;
+  }
+
+  .tree-holder .tree-table tr:hover td {
+    background-color: #222;
+  }
+
+  .tree-holder .tree-item .tree-item-file-name i,
+  .tree-holder .tree-item .tree-item-file-name a {
+    color: #91a9c7;
+  }
+
+  .wiki table {
+    color: #bbb;
+  }
+
+  .table-bordered,
+  .wiki table,
+  .md table,
+  ul.notes .note .note-body .note-text table {
+    border-color: #777;
+  }
+
+  table.table tr th,
+  .file-holder table tr th,
+  .wiki table tr th,
+  .md table tr th,
+  ul.notes .note .note-body .note-text table tr th,
+  .layout-nav,
+  .table-holder .builds th {
+    background-color: #333;
+    border-color: #777;
+    color: #bbb;
+  }
+
+  .table > tbody + tbody,
+  .file-holder table > tbody + tbody,
+  .wiki table > tbody + tbody,
+  .md table > tbody + tbody,
+  ul.notes .note .note-body .note-text table > tbody + tbody {
+    border-color: #777;
+  }
+
+  .wiki h1 {
+    border-color: #777;
+    color: #eee;
+  }
+
+  .wiki h2 {
+    color: #ddd;
+  }
+
+  .wiki h3 {
+    color: #ccc;
+  }
+
+  .wiki h4 {
+    color: #bbb;
+  }
+
+  .wiki,
+  .wiki p {
+    color: #aaa;
+  }
+
+  .build-page .build-widget {
+    background-color: #111;
+  }
+
+  .dashboard .side .panel .panel-heading {
+    background-color: #464a52;
+  }
+
+  .light-well,
+  .description-block {
+    background-color: #38393a;
+  }
+
+  code.key-fingerprint {
+    background-color: #444;
+    color: #9499a5;
+  }
+
+  .bs-callout,
+  .account-well,
+  .well {
+    border-color: #777;
+    color: #fff;
+    background: #444;
+  }
+
+  .bs-callout-warning,
+  .settings-message {
+    background-color: #433a29;
+    border-color: #8a6d3b;
+    color: #faebcc;
+  }
+
+  .dropdown-menu {
+    background-color: #444;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .dropdown-menu a {
+    color: #bbb;
+  }
+
+  .dropdown-menu a:hover,
+  .dropdown-menu a:focus,
+  .dropdown-menu a.is-focused {
+    background-color: #456;
+    color: #eee;
+  }
+
+  .layout-nav .controls .dropdown li.active a {
+    color: #ddd;
+  }
+
+  .dropdown-menu .divider {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .row-content-block.content-component-block {
+    background-color: #111;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .commit-header {
+    background-color: #272727;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .commit:not(:last-child) {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .awards .award.active {
+    background-color: #404245;
+    border-color: #505255;
+  }
+
+  .variables-table tbody td:not(:first-child):not(:last-child) {
+    white-space: pre;
+  }
+
+  .author_link {
+    color: #6a8ebe;
+  }
+
+  .well-list > li:hover {
+    background: #444;
+  }
+
+  .file-holder .file-content.blame td {
+    background-color: #111;
+  }
+
+  .file-holder .file-content.blame td.blame-numbers {
+    background-color: #333;
+  }
+
+  .file-holder .file-content.blame td.blame-commit {
+    background-color: #222;
+  }
+
+  .code.white {
+    background-color: #111819 !important;
+    color: #eee !important;
+  }
+
+  /* Style Settings */
+  .diff-file .diff-content,
+  .code.white,
+  .code.white pre.code,
+  .code.white .line_holder .line_content,
+  pre,
+  .diff-file .diff-content table .line_holder td,
+  .variables-table tbody td,
+  .file-holder .file-content.blame td.lines code {
+    font-family: "Menlo", "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "andale mono", "lucida console", monospace;
+    font-size: 11px;
+  }
+
+  textarea.js-gfm-input,
+  form.new_variable #variable_key,
+  form.new_variable #variable_value {
+    font-family: "Menlo", "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "andale mono", "lucida console", monospace;
+    font-size: 13px;
   }
 }
+
+@-moz-document url-prefix("https://getpocket.com") {
+
+.pkt-nav, body, #content .wrapper.active, .side-nav, .page_queue_grid .item_content, .sub, .page_queue_list .item_content, .edit-content, .tag-detail {
+  background-color: #212121 !important;
+  /* general bg */
+}
+.page_queue_grid, .item_content, .edit-content, .item-detail, .item-domain, .tag-detail
+/* articles */
+
+{
+  border: 1px solid #313633 !important;
+  border-bottom: 1px solid #313633 !important;
+}
+
+a.title {
+    color: white !important;
+}
+
+span.thumb {
+    color: white !important;
+}
+}
+
+/* #i1804505436 > div:nth-child(1) > a:nth-child(2) */
+
+/* <li class="item item_type_normal adjusted" id="i1599452980">
+	<div class="item_content">
+		<a class="item_link start_articleview" href="/a/read/1599452980" target="_blank"></a>
+		<a class="title" href="/a/read/1599452980">Qingluan/musicbox</a>
+		<span style="height: 199.733px; background-image: url(&quot;https://img.readitlater.com/i/camo.githubusercontent.com/91b059e92c35d1e9bc06c5b45a00b3d56ecae916/68747470733a2f2f696d672e736869656c64732e696f2f707970692f646d2f4e6574456173652d4d75736963426f782e737667/RS/w399-nc.jpg?f=t&amp;ne=1&amp;ssl=1&quot;); text-shadow: 0pt 0pt 1pt rgb(0, 0, 0), 0pt 0pt 2pt rgb(0, 0, 0), 0pt 0pt 3pt rgb(0, 0, 0), 0pt 0pt 4pt rgb(0, 0, 0), 0pt 0pt 5pt rgb(0, 0, 0), 0pt 0pt 5pt rgb(0, 0, 0), 0pt 0pt 5pt rgb(0, 0, 0) ! important;" data-shouldcache="true" data-tileclass="normal" data-thumbvariant="2" data-thumburl="https://img.readitlater.com/i/camo.githubusercontent.com/91b059e92c35d1e9bc06c5b45a00b3d56ecae916/68747470733a2f2f696d672e736869656c64732e696f2f707970692f646d2f4e6574456173652d4d75736963426f782e737667/RS/w399-nc.jpg?f=t&amp;ne=1&amp;ssl=1" data-lazy-key="1599452980" data-lazy-type="thumbnail" class="thumb lazy-active" variant=""></span>
+		<img src="https://img.readitlater.com/i/github.com/favicon.ico?f=fi" data-favicon-url="https://img.readitlater.com/i/github.com/favicon.ico?f=fi" data-lazy-key="1599452980" data-lazy-type="favicon" class="favicon lazy-active" data-originalurl="https://getpocket.com/redirect?url=https%3A%2F%2Fgithub.com%2FQingluan%2Fmusicbox&amp;formCheck=07581babee22f26e913ad428b0204750">
+		<div class="favstate"></div>
+	<ul class="sub clearfix">
+	<li class="original_url_container"><a class="original_url" href="https://getpocket.com/redirect?url=https%3A%2F%2Fgithub.com%2FQingluan%2Fmusicbox&amp;formCheck=07581babee22f26e913ad428b0204750" target="_blank" title="View Original">github.com</a></li>
+	<li class="tags">
+		<span class="tag_container"></span>
+		<a class="edit"><span>Add Tag</span></a>
+	</li>
+</ul>
+<div class="clear"></div><ul class="buttons">
+
+    	<li class="action_share" title="Share"><a href="#">Share</a></li>
+    	<li class="action_mark" title="Archive"><a href="#">Archive</a></li>
+    	<li class="action_delete" title="Delete"><a href="#">Delete</a></li>
+    	<li class="action_tag" title="Edit tags"><a href="#">Edit tags</a></li>
+    	<li class="action_favorite " title="Favorite"><a href="#">Favorite</a></li>
+</ul>
+</div>
+</li>
+
+
+	<div class="item_content">
+		<a class="item_link start_articleview" href="/a/read/1599452980" target="_blank"></a>
+		<a class="title" href="/a/read/1599452980">Qingluan/musicbox</a>
+		<span style="height: 199.733px; background-image: url(&quot;https://img.readitlater.com/i/camo.githubusercontent.com/91b059e92c35d1e9bc06c5b45a00b3d56ecae916/68747470733a2f2f696d672e736869656c64732e696f2f707970692f646d2f4e6574456173652d4d75736963426f782e737667/RS/w399-nc.jpg?f=t&amp;ne=1&amp;ssl=1&quot;); text-shadow: 0pt 0pt 1pt rgb(0, 0, 0), 0pt 0pt 2pt rgb(0, 0, 0), 0pt 0pt 3pt rgb(0, 0, 0), 0pt 0pt 4pt rgb(0, 0, 0), 0pt 0pt 5pt rgb(0, 0, 0), 0pt 0pt 5pt rgb(0, 0, 0), 0pt 0pt 5pt rgb(0, 0, 0) ! important;" data-shouldcache="true" data-tileclass="normal" data-thumbvariant="2" data-thumburl="https://img.readitlater.com/i/camo.githubusercontent.com/91b059e92c35d1e9bc06c5b45a00b3d56ecae916/68747470733a2f2f696d672e736869656c64732e696f2f707970692f646d2f4e6574456173652d4d75736963426f782e737667/RS/w399-nc.jpg?f=t&amp;ne=1&amp;ssl=1" data-lazy-key="1599452980" data-lazy-type="thumbnail" class="thumb lazy-active" variant=""></span>
+		<img src="https://img.readitlater.com/i/github.com/favicon.ico?f=fi" data-favicon-url="https://img.readitlater.com/i/github.com/favicon.ico?f=fi" data-lazy-key="1599452980" data-lazy-type="favicon" class="favicon lazy-active" data-originalurl="https://getpocket.com/redirect?url=https%3A%2F%2Fgithub.com%2FQingluan%2Fmusicbox&amp;formCheck=07581babee22f26e913ad428b0204750">
+		<div class="favstate"></div>
+	<ul class="sub clearfix">
+	<li class="original_url_container"><a class="original_url" href="https://getpocket.com/redirect?url=https%3A%2F%2Fgithub.com%2FQingluan%2Fmusicbox&amp;formCheck=07581babee22f26e913ad428b0204750" target="_blank" title="View Original">github.com</a></li>
+	<li class="tags">
+		<span class="tag_container"></span>
+		<a class="edit"><span>Add Tag</span></a>
+	</li>
+</ul>
+<div class="clear"></div><ul class="buttons">
+
+    	<li class="action_share" title="Share"><a href="#">Share</a></li>
+    	<li class="action_mark" title="Archive"><a href="#">Archive</a></li>
+    	<li class="action_delete" title="Delete"><a href="#">Delete</a></li>
+    	<li class="action_tag" title="Edit tags"><a href="#">Edit tags</a></li>
+    	<li class="action_favorite " title="Favorite"><a href="#">Favorite</a></li>
+</ul>
+</div>
+*/
+
+

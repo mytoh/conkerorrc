@@ -1,43 +1,44 @@
 /* http://conkeror.org/Tabs/skorpanBlack */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul") ;
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 #tab2-bar {
-    border-bottom: 1px solid threedshadow;
+  border-bottom: 1px solid threedshadow;
 }
 
 .tab2 {
-    -moz-appearance: none;
-    -moz-box-align: center;
-    min-width: 10em;
-    max-width: 15em;
+  -moz-appearance: none;
+  -moz-box-align: center;
+  min-width: 10em;
+  max-width: 11em;
 }
 
 .tab2-label {
-    -moz-box-flex: 100;
-    margin-left: 1pt;
-    padding-top: 1pt;
+  -moz-box-flex: 100;
+  margin-left: 1pt;
+  padding-top: 1pt;
 }
 
 .tab2-index {
-    width: 11px;
-    padding: 0pt 0pt 0pt 1pt;
-    font-weight: 900;
-    text-align: center;
+  width: 11px;
+  padding: 0pt 0pt 0pt 1pt;
+  font-weight: 900;
+  text-align: center;
 }
 
 .tab2-icon {
-    width: 15px;
-    height: 15px;
-    -moz-margin-start: 1pt;
-    -moz-margin-end: 1pt;
+  width: 14px;
+  height: 14px;
+  -moz-margin-start: 1pt;
+  -moz-margin-end: 1pt;
 }
 
 #tab2-bar .tab2[selected=true] {
-    border: 1px solid white;
-    background: #666;
-    /* border: 1px solid #999; */
+  border: 1px solid white;
+  background: #666;
+
+  /* border: 1px solid #999; */
 }
 
 #tab2-bar .tab2[selected=false] {
-    max-width: 20px;
+  max-width: 20px;
 }

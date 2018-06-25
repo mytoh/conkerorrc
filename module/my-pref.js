@@ -18,15 +18,27 @@ session_pref("general.useragent.compatMode.firefox", true);
 // When true image documents will be automatically scaled to fit the viewport.
 session_pref("browser.enable_automatic_image_resizing", true);
 // A value of 3 forces scrollbars to be on the left. Further information.
-session_pref("layout.scrollbar.side",3);
+session_pref("layout.scrollbar.side", 3);
 session_pref("layout.frame_rate.precise", true);
 session_pref("privacy.trackingprotection.enabled", true);
 // session_pref("javascript.options.mem.max", 51200);
 session_pref("javascript.options.mem.high_water_mark", 30);
-session_pref("browser.sessionhistory.max_entries", 10);
+session_pref("browser.sessionhistory.max_entries", 20);
+session_pref("browser.sessionstore.interval", 30000);
+// The maximum number of 'back button' session history entries to store in sessionstore.js.
+// Default: 10 (-1 = no limit / 0 = only the currently active entry will be saved)
+session_pref("browser.sessionstore.max_serialize_back", 3);
+// The maximum number of 'forward button' session history entries to store in sessionstore.js.
+// Default: -1 (-1 = no limit / 0 = only the currently active entry will be saved)
+session_pref("browser.sessionstore.max_serialize_forward", 2);
+// The maximum number of closed tabs that get saved.
+// Default: 10
+session_pref("browser.sessionstore.max_tabs_undo", 2);
+// default: 30000
+session_pref("browser.sessionstore.interval", 30000000);
 
 /// proxy
-session_pref("network.proxy.no_proxies_on", "localhost, 127.0.0.1, 192.168.0.0/24")
+session_pref("network.proxy.no_proxies_on", "localhost, 127.0.0.1, 192.168.3.0/24");
 
 /// squid
 // session_pref('network.proxy.http',  "localhost");
@@ -36,10 +48,12 @@ session_pref("network.proxy.no_proxies_on", "localhost, 127.0.0.1, 192.168.0.0/2
 // session_pref('network.proxy.type', 1);
 
 /// delegate
-session_pref('network.proxy.http',  "proxy.koti");
+session_pref('network.proxy.http', "proxy.koti");
 session_pref('network.proxy.http_port', 3128);
-session_pref('network.proxy.ssl',    "proxy.koti");
-session_pref('network.proxy.ssl_port', 3128);
+// session_pref('network.proxy.ssl', "proxy.koti");
+session_pref('network.proxy.ssl_port', 0);
+/* session_pref('network.proxy.gopher', "proxy.koti");
+ * session_pref('network.proxy.gopher_port', 3128); */
 session_pref('network.proxy.type', 1);
 
 /// relayd
@@ -50,15 +64,19 @@ session_pref('network.proxy.type', 1);
 // session_pref('network.proxy.type', 1);
 
 /// disable proxy
-// session_pref('network.proxy.type', 0);
-
+/* session_pref('network.proxy.type', 0);
+ *  */
 
 // oopp
 session_pref("dom.ipc.plugins.enabled", false);
 session_pref("dom.ipc.plugins.enabled.libflashplayer.so", false);
 
 // http
-session_pref("network.http.spdy.enabled.http2draft", true);
+session_pref("network.http.spdy.enabled.http2draft", false);
+
+// http2 spdy
+// http://zapanet.info/blog/item/3188
+session_pref("network.http.spdy.enabled.http2", false);
 
 // webm
 // session_pref("media.mediasource.webm.enabled", true);
@@ -161,4 +179,90 @@ session_pref("layout.css.font-loading-api.enabled", true);
 session_pref("layout.css.unicode-range.enabled", true);
 
 
+/// disable addon ceck
+session_pref("xpinstall.whitelist.required", false);
+
+/// disable crash report
+session_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
+session_pref("dom.ipc.plugins.reportCrashURL", false);
+
+session_pref("reader.parse-on-load.enabled", false);
+
+session_pref("layout.textarea.spellcheckDefault", false);
+
+/* disable middle mouse auto scrolling */
+session_pref("general.autoScroll", false);
+
+/* cache, default value 215040 */
+session_pref("browser.cache.disk.capacity", 215040 / 3 );
+
 provide("my-pref");
+
+
+/* 
+ * https://boards.4chan.org/g/thread/59349945
+ * user_pref("beacon.enabled", false);
+ * user_pref("browser.download.useDownloadDir", false);
+ * user_pref("browser.laterrun.enabled", false);
+ * user_pref("browser.newtabpage.enabled", false);
+ * user_pref("browser.privatebrowsing.autostart", true);
+ * user_pref("browser.safebrowsing.malware.enabled", false);
+ * user_pref("browser.safebrowsing.phishing.enabled", false);
+ * user_pref("browser.startup.homepage", "about:blank");
+ * user_pref("browser.tabs.crashReporting.sendReport", false);
+ * user_pref("datareporting.healthreport.uploadEnabled", false);
+ * user_pref("datareporting.policy.dataSubmissionEnabled", false);
+ * user_pref("device.sensors.enabled", false);
+ * user_pref("dom.battery.enabled", false);
+ * user_pref("dom.event.clipboardevents.enabled", false);
+ * user_pref("dom.event.contextmenu.enabled", false);
+ * user_pref("dom.ipc.plugins.reportCrashURL", false);
+ * user_pref("experiments.enabled", false);
+ * user_pref("extensions.pocket.enabled", false);
+ * user_pref("general.appname.override", "Netscape");
+ * user_pref("general.appversion.override", "5.0 (Windows)");
+ * user_pref("general.buildID.override", "20100101");
+ * user_pref("general.oscpu.override", "Windows NT 6.3");
+ * user_pref("general.platform.override", "Win32");
+ * user_pref("general.productSub.override", "20100101");
+ * user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 6.3;rv:45.0) Gecko/20100101 Firefox/45.0");
+ * user_pref("general.useragent.vendor", "");
+ * user_pref("general.useragent.vendorSub", "");
+ * user_pref("geo.enabled", false);
+ * user_pref("media.navigator.enabled", false);
+ * user_pref("media.peerconnection.enabled", false);
+ * user_pref("network.cookie.cookieBehavior", 1);
+ * user_pref("network.dns.disablePrefetch", true);
+ * user_pref("network.http.referer.spoofSource", true);
+ * user_pref("network.predictor.enabled", false);
+ * user_pref("network.user_prefetch-next", false);
+ * user_pref("network.proxy.socks_remote_dns", true);
+ * user_pref("social.remote-install.enabled", false);
+ * user_pref("social.whitelist", "");*/
+
+/* -------------------------------------------------------
+ * */
+/* 
+ * user_pref("browser.newtabpage.storageVersion", 1);
+ * user_pref("browser.open.lastDir", "/fig/wall");
+ * user_pref("browser.pagethumbnails.storage_version", 3);
+ * user_pref("browser.places.smartBookmarksVersion", 8);
+ * user_pref("browser.reader.detectedFirstArticle", true);
+ * user_pref("browser.rights.3.shown", true);
+ * user_pref("browser.safebrowsing.provider.google.lastupdatetime", "1489250185578");
+ * user_pref("browser.safebrowsing.provider.google.nextupdatetime", "1489252099578");
+ * user_pref("browser.safebrowsing.provider.mozilla.lastupdatetime", "1489252512174");
+ * user_pref("browser.safebrowsing.provider.mozilla.nextupdatetime", "1489256112174");
+ * user_pref("browser.search.countryCode", "ID");
+ * user_pref("browser.search.region", "ID");
+ * user_pref("browser.search.update", false);
+ * user_pref("browser.sessionstore.upgradeBackup.latestBuildID", "20160607155532");
+ * user_pref("browser.shell.checkDefaultBrowser", false);
+ * user_pref("browser.showQuitWarning", true);
+ * user_pref("browser.slowStartup.averageTime", 13034);
+ * user_pref("browser.slowStartup.samples", 1);
+ * user_pref("browser.startup.homepage", "about:newtab");
+ * user_pref("browser.startup.homepage_override.buildID", "20160607155532");
+ * user_pref("browser.startup.homepage_override.mstone", "45.2.0");
+ * user_pref("browser.syncPromoViewsLeftMap", "{\"addons\":4,\"bookmarks\":0,\"passwords\":0}");
+ * user_pref("browser.toolbarbuttons.introduced.pocket-button", true);*/

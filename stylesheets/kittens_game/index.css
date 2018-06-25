@@ -1,0 +1,24 @@
+
+/* bitbucket.org/bloodrizer/kitten-game.git/js/resources.js */
+/* var tdResName = dojo.create("td", { */
+/* 	class: "resource-name", */
+/* 	innerHTML: ( res.title || res.name )  + ":", style: { width: "60px"} */
+/* }, tr); */
+
+
+
+@-moz-document url-prefix("http://bloodrizer.ru") {
+
+    td .resource-name:nth-child(2) {
+        color: #24a2cc !important;
+        /* color: initial  ; */
+    }
+
+    td .maxRes {
+        color: #112211 !important;
+    }
+    
+    td .resAmount .resLimitNotice {
+        color: orange !important;
+    }
+}

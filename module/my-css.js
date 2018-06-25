@@ -1,21 +1,36 @@
-
 dumpln("my-css");
 
-function resister_stylesheet (name) {
-  let (sheet = get_home_directory()) {
-    sheet.append(".conkerorrc");
-    sheet.append("stylesheets");
-    sheet.append(name + ".css");
-    register_user_stylesheet(make_uri(sheet));
-    dumpln(name);
-  }
+function register_stylesheet(name) {
+    let (sheet = get_home_directory()) {
+        sheet.append(".conkerorrc");
+        sheet.append("stylesheets");
+        sheet.append(name + ".css");
+        register_user_stylesheet(make_uri(sheet));
+        dumpln(name);
+    }
 }
 
-// resister_stylesheet("volafile.io");
-// resister_stylesheet("about-blank");
-// resister_stylesheet("hacker-news");
-// resister_stylesheet("wikipedia");
-// resister_stylesheet("github.com");
- resister_stylesheet("dark");
 
+function register_site_stylesheet(site, name) {
+    let (sheet = get_home_directory()) {
+        sheet.append(".conkerorrc");
+        sheet.append("stylesheets");
+        sheet.append(site);
+        sheet.append(name + ".css");
+        register_user_stylesheet(make_uri(sheet));
+        dumpln(name);
+    }
+}
+
+// register_stylesheet("volafile.io");
+// register_stylesheet("about-blank");
+// register_stylesheet("hacker-news");
+// register_stylesheet("wikipedia");
+// register_stylesheet("github.com");
+register_stylesheet("dark");
+register_stylesheet("pocket-web-dark");
+register_site_stylesheet("kittens_game", "index");
+/* register_site_stylesheet("kittens_game", "default");*/
+/* register_site_stylesheet("kittens_game", "theme_dark");
+ * */
 provide("my-css");

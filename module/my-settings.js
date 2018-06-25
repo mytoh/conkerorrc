@@ -6,7 +6,7 @@ require("new-tabs");
 require("favicon");
 require("clicks-in-new-buffer");
 require("adblockplus");
-
+//require("dom-inspector");
 
 //// homepage
 let (home = get_home_directory()) {
@@ -60,7 +60,7 @@ url_completion_use_history = true;
 url_completion_use_bookmarks = true;
 
 // favicon in minibuffer
-read_buffer_show_icons = true;
+read_buffer_show_icons = false;
 
 // use alpaha for hints
 hint_digits="aoeuidhtnspyfgcrl";
@@ -104,6 +104,11 @@ key_kill_mode.test.push(/\/\/.*slashdot\.org\//);
 require("block-content-focus-change");
 
 // useragent
-set_user_agent("Mozilla/5.0 (Windows NT 6.3; rv:38.0) Gecko/20100101 Firefox/38.0");
+set_user_agent("Mozilla/5.0");
+/* set_user_agent("Mozilla/5.0 (Windows NT 6.3; rv:49.0) Gecko/20100101 Firefox/49.0");
+ * */
+
+// emacs soundklaus setting
+set_protocol_handler("soundklaus", find_file_in_path("emacsclient"));
 
 provide("my-settings");

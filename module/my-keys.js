@@ -17,6 +17,7 @@ define_key(default_global_keymap, "C-d", "cmd_scrollPageDown");
 define_key(default_global_keymap, "C-j", "buffer-next");
 define_key(default_global_keymap, "C-k", "buffer-previous");
 define_key(default_base_keymap, "M-u", "universal-argument");
+define_key(default_global_keymap, "C-x C-c", null);
 
 
 //// http://emacs-fu.blogspot.jp/2010/12/conkeror-web-browsing-emacs-way.html
@@ -30,6 +31,7 @@ interactive("copy-url",
         }
 );
 define_key(default_global_keymap, "C-c u", "copy-url");
+define_key(default_global_keymap, "C-c C-u", "copy-url");
 
 // reload conkerorrc with C-c r
 interactive("reload-config", "reload conkerorrc",
@@ -44,5 +46,6 @@ define_key(default_global_keymap, "C-c r", "reload-config");
 define_key(minibuffer_keymap, "C-h", "cmd_deleteCharBackward");
 define_key(minibuffer_keymap, "C-j", "minibuffer-complete");
 define_key(minibuffer_keymap, "C-k", "minibuffer-complete-previous");
+
 
 provide("my-keys");

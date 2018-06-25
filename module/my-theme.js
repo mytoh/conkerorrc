@@ -3,6 +3,10 @@
 session_pref("browser.display.background_color",  "#383C4A");
 
 
+// css selectors look ↓ (not working?)
+// chrome://browser/content/browser.xul  
+// http://pastebin.com/raw/z4hmAWy2
+
 // theme_load("default");
  // theme_load("gesso");
  // theme_load("mono");
